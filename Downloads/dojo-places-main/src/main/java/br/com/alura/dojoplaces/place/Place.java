@@ -45,4 +45,39 @@ public class Place {
         this.neighborhood = neighborhood;
         this.city = city;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public String getNeighborhood() {
+        return neighborhood;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public OffsetDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public OffsetDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void update(PlaceEditForm placeEditForm) {
+        this.name = placeEditForm.getName();
+        this.code = placeEditForm.getCode();
+        this.neighborhood = placeEditForm.getNeighborhood();
+        this.city = placeEditForm.getCity();
+    }
 }

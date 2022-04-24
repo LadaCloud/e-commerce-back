@@ -4,7 +4,7 @@
 <br/>
 <br/>
 
-<form:form modelAttribute="placeNewForm" method="post" action="/create/local">
+<form:form modelAttribute="placeEditForm" method="post" action="update/local/${code}">
 
     <label>Nome:</label>
     <form:input path="name"/>
@@ -22,7 +22,7 @@
     <form:input path="city"/>
     <form:errors path="city" cssStyle="color: red"/>
 
-    <form:input path="id" >
+    <form:input type="hidden" name="id" path="id"/>
 
     <br/>
     <br/>
