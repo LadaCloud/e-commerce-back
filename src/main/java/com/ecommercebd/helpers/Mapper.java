@@ -1,4 +1,4 @@
-package com.ecommercebd.mapper;
+package com.ecommercebd.helpers;
 
 public interface Mapper {
 	

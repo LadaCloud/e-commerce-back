@@ -2,6 +2,7 @@ package com.ecommercebd.database.domain;
 
 import com.ecommercebd.order.domain.Order;
 import com.ecommercebd.plan.domain.Plan;
+import com.github.javafaker.Faker;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +22,9 @@ public class DataBaseService {
 			DataBase dataBase = DataBase.builder()
 					.order(order)
 					.plan(plan)
+					.limitOfConnections(plan.getLimitOfConnections())
+					.limitOfUsers(plan.getLimitOfUsers())
+					.storage(plan.getStorage())
 					.build();
 			dataBaseRepository.save(dataBase);
 			dataBases.add(dataBase);

@@ -1,7 +1,7 @@
 package com.ecommercebd.user.application;
 
 import com.ecommercebd.exception.NotFoundException;
-import com.ecommercebd.mapper.Mapper;
+import com.ecommercebd.helpers.Mapper;
 import com.ecommercebd.security.IsClientOrAdmin;
 import com.ecommercebd.user.domain.Role;
 import com.ecommercebd.user.domain.User;

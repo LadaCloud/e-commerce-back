@@ -1,6 +1,6 @@
 package com.ecommercebd.config;
 
-import com.ecommercebd.mapper.Mapper;
+import com.ecommercebd.helpers.Mapper;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
