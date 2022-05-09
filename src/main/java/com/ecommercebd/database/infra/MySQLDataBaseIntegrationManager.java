@@ -18,7 +18,7 @@ public class MySQLDataBaseIntegrationManager implements DataBaseIntegrationManag
 
 	@Override
 	public void create(DataBase dataBase) {
-		jdbcTemplate.update("CREATE DATABASE ?", dataBase.getName());
+		jdbcTemplate.execute(String.format("CREATE DATABASE %s", dataBase.getName()));
 	}
 
 	@Override

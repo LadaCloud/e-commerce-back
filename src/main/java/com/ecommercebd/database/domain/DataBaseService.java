@@ -27,9 +27,9 @@ public class DataBaseService {
 					.limitOfConnections(plan.getLimitOfConnections())
 					.limitOfUsers(plan.getLimitOfUsers())
 					.storage(plan.getStorage())
-					.name(generator.generateUserName())
+					.name(generator.dataBaseNameGenerator())
 					.password(generator.generatePassword())
-					.username(generator.dataBaseNameGenerator())
+					.username(generator.generateUserName())
 					.build();
 			
 			dataBaseRepository.save(dataBase);

@@ -19,7 +19,7 @@ public class RandomDataGeneratorConfig {
 			@Override
 			public String dataBaseNameGenerator() {
 				return faker.cat().name().toLowerCase().replace(" ", "")
-						.concat("-")
+						.concat("_")
 						.concat(faker.number().digits(4));
 			}
 

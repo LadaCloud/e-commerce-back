@@ -24,6 +24,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @IsClientOrAdmin
+@RequestMapping("/order")
 public class MyOrderController {
     private final Mapper mapper;
     private final OrderRepository orderRepository;
@@ -39,7 +40,7 @@ public class MyOrderController {
                 .orElseThrow(() -> new NotFoundException("Pedido não encontrado."));
     }
 
-    @GetMapping("/{orders}")
+    @GetMapping
     List<OrderResponse> findAll(@AuthenticationPrincipal UserDetails userDetails){
         return orderRepository.findAllByCustomerEmail(userDetails.getUsername())
                 .stream()
