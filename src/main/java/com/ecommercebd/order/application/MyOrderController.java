@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@RequestMapping("/order")
 @RequiredArgsConstructor
 @IsClientOrAdmin
 @RequestMapping("/order")
