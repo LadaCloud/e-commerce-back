@@ -25,7 +25,6 @@ import java.util.List;
 @RequestMapping("/order")
 @RequiredArgsConstructor
 @IsClientOrAdmin
-@RequestMapping("/order")
 public class MyOrderController {
     private final Mapper mapper;
     private final OrderRepository orderRepository;
