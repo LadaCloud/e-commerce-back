@@ -2,9 +2,15 @@ package com.ecommercebd.database.infra;
 
 import com.ecommercebd.database.domain.DataBase;
 import com.ecommercebd.database.domain.DataBaseIntegrationManager;
+import lombok.RequiredArgsConstructor;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 
+@Component
+@RequiredArgsConstructor
 public class MySQLDataBaseIntegrationManager implements DataBaseIntegrationManager {
 
+	private final JdbcTemplate jdbcTemplate;
 	@Override
 	public void ping(DataBase dataBase) {
 		
@@ -12,7 +18,7 @@ public class MySQLDataBaseIntegrationManager implements DataBaseIntegrationManag
 
 	@Override
 	public void create(DataBase dataBase) {
-		
+		jdbcTemplate.update("CREATE DATABASE ?", dataBase.getName());
 	}
 
 	@Override

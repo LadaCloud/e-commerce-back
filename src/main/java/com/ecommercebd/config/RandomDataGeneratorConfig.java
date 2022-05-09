@@ -1,10 +1,12 @@
-package com.ecommercebd;
+package com.ecommercebd.config;
 
 import com.ecommercebd.helpers.RandomDataGenerator;
 import com.github.javafaker.Faker;
 import org.apache.commons.text.RandomStringGenerator;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
 public class RandomDataGeneratorConfig {
 	
 	@Bean

@@ -1,5 +1,6 @@
 package com.ecommercebd.order.application;
 
+import com.ecommercebd.database.domain.DataBaseService;
 import com.ecommercebd.exception.NotFoundException;
 import com.ecommercebd.helpers.Mapper;
 import com.ecommercebd.order.domain.Order;
@@ -28,6 +29,8 @@ public class MyOrderController {
     private final OrderRepository orderRepository;
     private final UserRepository userRepository;
     private final PlanRepository planRepository;
+
+    private final DataBaseService dataBaseService;
 
     @GetMapping("{orderId}")
     OrderResponse findById(@PathVariable Long orderId, @AuthenticationPrincipal UserDetails userDetails){
@@ -63,6 +66,7 @@ public class MyOrderController {
         order.setPlans(plans);
 
         orderRepository.save(order);
+        dataBaseService.createBy(order);
         return this.mapper.map(order, OrderResponse.class);
 
     }
