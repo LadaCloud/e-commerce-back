@@ -21,7 +21,8 @@ import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
-@RestController("/order")
+@RestController
+@RequestMapping("/order")
 @RequiredArgsConstructor
 @IsClientOrAdmin
 public class MyOrderController {
