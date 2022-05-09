@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -48,4 +50,13 @@ public class DataBase {
     @JoinColumn(name = "plan_id",
             foreignKey = @ForeignKey(name = "fk_database_plan_id"))
     private Plan plan;
+
+    @Enumerated(EnumType.ORDINAL)
+    private Status status;
+    
+    public enum Status {
+        PENDING,
+        UP,
+        DOWN
+    }
 }
