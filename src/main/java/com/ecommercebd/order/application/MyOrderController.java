@@ -21,7 +21,7 @@ import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
-@RestController
+@RestController("/order")
 @RequiredArgsConstructor
 @IsClientOrAdmin
 public class MyOrderController {
@@ -39,7 +39,7 @@ public class MyOrderController {
                 .orElseThrow(() -> new NotFoundException("Pedido não encontrado."));
     }
 
-    @GetMapping("/{orders}")
+    @GetMapping
     List<OrderResponse> findAll(@AuthenticationPrincipal UserDetails userDetails){
         return orderRepository.findAllByCustomerEmail(userDetails.getUsername())
                 .stream()
